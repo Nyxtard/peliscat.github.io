@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS para el reproductor de video -->
+    <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet">
+
+    <!-- CSS para los estilos personalizados -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Biblioteca Plyr para el reproductor de video -->
+    <link href="https://cdn.plyr.io/3.7.2/plyr.css" rel="stylesheet">
+    <script defer="" src="https://cdn.plyr.io/3.7.2/plyr.js"></script>     
+</head>
+<body>
+    <!-- Contenedor del video -->
+    <div class="fixed h-full w-full flex justify-center"><div class="absolute top-0 bottom-0 sm:w-3/4 lg:w-1/2 m-auto h-fit flex flex-col bg-[rgb(0,0,0)]"><div class="flex flex-row justify-between p-1 sm:p-2 md:p-4"><p class="text-bold">Official Trailer</p><button><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></button></div><iframe class="w-full aspect-video" src="https://www.youtube-nocookie.com/embed/2Ai4bgELi24" allow="encrypted-media" allowfullscreen=""></iframe></div></div>
+
+    <!-- Contenedor de las recomendaciones -->
+    <div class="recomendaciones">
+        <h2>Películas recomendadas</h2>
+        <ul>
+            <li><a href="#">Película 1</a></li>
+            <li><a href="#">Película 2</a></li>
+            <li><a href="#">Película 3</a></li>
+            <li><a href="#">Película 4</a></li>
+            <li><a href="#">Película 5</a></li>
+        </ul>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        /* Inicialización del reproductor de video */
+        window.addEventListener('DOMContentLoaded', () => {
+            const players = Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p,{
+                youtube: { noCookie: true },
+                i18n: {
+                quality: 'Calidad',
+                speed: 'Velocidad',
+                captions: 'Subtítulos',
+                disabled: 'Desactivar',
+                enabled: 'Activar',
+                },
+            }));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet"></link>
+    <link rel="stylesheet" href="../style/sass.css">
+
+	<link href="https://cdn.plyr.io/3.7.2/plyr.css" rel="stylesheet"></link>
+	<script defer="" src="https://cdn.plyr.io/3.7.2/plyr.js"></script>     
+
+    
+    <div id="mensaje" style="display:none;">Dale doble click a la pantalla para que puedas ver los contenedor-titulo-controles</div>
+
+    <script>/*<![CDATA[*/
+    window.addEventListener('DOMContentLoaded', () => {
+    const players = Array.from(document.querySelectorAll('.js-player')).map((p) => new Plyr(p,{
+        youtube: { noCookie: true },
+        i18n: {
+        quality: 'Calidad',
+        speed: 'Velocidad',
+        captions: 'Subtítulos',
+        disabled: 'Desactivar',
+        enabled: 'Activar',
+        },
+    }));
+    });/*]]>*/
+    </script>
+
+    <head>
+        <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet"></link>
+    </head>
+    <body>
+        <video class="js-player" controls playsinline poster="../img/Logo-Double-Click-3-1396x1536-1.png" autoplay>
+            <source src="https://dl.dropboxusercontent.com/s/ojf9aicsbyr1ipl/moneyball.mp4" type="video/mp4">
+        </video>
+
+    </body>
+        
+</html>
+
+
